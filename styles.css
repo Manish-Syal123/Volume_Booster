@@ -2,8 +2,8 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9f9f9;
   width: 300px;
-  padding: 20px;
   color: #333;
+  padding-right: 15px;
 }
 
 h2 {
@@ -17,20 +17,32 @@ h2 {
 input[type="range"] {
   width: 100%;
   -webkit-appearance: none;
-  height: 8px;
-  border-radius: 5px;
+  height: 15px;
+  border: 1px solid black;
+  border-radius: 12px;
   background: #ddd;
   outline: none;
   cursor: pointer;
   margin-bottom: 10px;
+  margin-top: 14px;
+  padding-top: 6.5px;
+  padding-bottom: 6.5px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
+  /* width: 22px;
+  height: 22px; */
+  width: 35px;
+  height: 20px;
+  /* border-radius: 50%; */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   background: #4a90e2;
   cursor: pointer;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
@@ -46,16 +58,19 @@ input[type="range"]::-webkit-slider-thumb:hover {
   text-align: center;
   font-weight: 600;
   color: #4a90e2;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
+#muteDisplay {
+  margin-left: 55px;
+}
 /* Toggle switch styles */
 .switch {
   position: relative;
   display: inline-block;
   width: 50px;
   height: 28px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   display: block;
 }
 

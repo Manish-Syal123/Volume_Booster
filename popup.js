@@ -3,6 +3,7 @@ let isMuted = false;
 const volumeSlider = document.getElementById("volumeRange");
 const display = document.getElementById("valueDisplay");
 const muteBtn = document.getElementById("muteToggle");
+const mutedisplay = document.getElementById("muteDisplay");
 
 volumeSlider.addEventListener("input", function () {
   const value = parseFloat(this.value);
@@ -30,7 +31,7 @@ volumeSlider.addEventListener("input", function () {
 
 muteBtn.addEventListener("click", () => {
   isMuted = !isMuted;
-  muteBtn.innerText = isMuted ? "Unmute" : "Mute";
+  mutedisplay.innerText = isMuted ? "Unmute" : "Mute";
 
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     chrome.tabs.sendMessage(
