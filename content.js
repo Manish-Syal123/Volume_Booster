@@ -1,11 +1,16 @@
 console.log("Content script injected and running");
 
+let currentBoost = 1.0;
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   console.log("Content script received message:", request);
   if (request.type === "BOOST_VOLUME") {
     boostVolume(request.boost);
+    currentBoost = request.boost;
   } else if (request.type === "TOGGLE_MUTE") {
-    toggleMute();
+    toggleMute(request.mute);
+  } else if (request.type === "GET_VOLUME") {
+    sendResponse({ boost: currentBoost });
   }
 });
 
